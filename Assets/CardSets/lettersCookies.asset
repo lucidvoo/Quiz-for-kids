@@ -1,0 +1,93 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e367826d0ed43144998aa53311ed0528, type: 3}
+  m_Name: lettersCookies
+  m_EditorClassIdentifier: 
+  cards:
+  - identifier: A
+    cardSprite: {fileID: 4963718625464178563, guid: b40154d2886f4564e9258b36d96df53b,
+      type: 3}
+  - identifier: B
+    cardSprite: {fileID: 7783457984840754399, guid: b40154d2886f4564e9258b36d96df53b,
+      type: 3}
+  - identifier: C
+    cardSprite: {fileID: 3234300448368640894, guid: b40154d2886f4564e9258b36d96df53b,
+      type: 3}
+  - identifier: D
+    cardSprite: {fileID: 7911670913450602933, guid: b40154d2886f4564e9258b36d96df53b,
+      type: 3}
+  - identifier: E
+    cardSprite: {fileID: 4652326554734856401, guid: b40154d2886f4564e9258b36d96df53b,
+      type: 3}
+  - identifier: F
+    cardSprite: {fileID: -6426668015567183463, guid: b40154d2886f4564e9258b36d96df53b,
+      type: 3}
+  - identifier: G
+    cardSprite: {fileID: 216406037199867053, guid: b40154d2886f4564e9258b36d96df53b,
+      type: 3}
+  - identifier: H
+    cardSprite: {fileID: -8235857483100294123, guid: b40154d2886f4564e9258b36d96df53b,
+      type: 3}
+  - identifier: I
+    cardSprite: {fileID: -3541686595128163680, guid: b40154d2886f4564e9258b36d96df53b,
+      type: 3}
+  - identifier: J
+    cardSprite: {fileID: -2756605603065543306, guid: b40154d2886f4564e9258b36d96df53b,
+      type: 3}
+  - identifier: K
+    cardSprite: {fileID: -1127063002332224934, guid: b40154d2886f4564e9258b36d96df53b,
+      type: 3}
+  - identifier: L
+    cardSprite: {fileID: -5901097786099144959, guid: b40154d2886f4564e9258b36d96df53b,
+      type: 3}
+  - identifier: M
+    cardSprite: {fileID: 3295844289267200183, guid: b40154d2886f4564e9258b36d96df53b,
+      type: 3}
+  - identifier: N
+    cardSprite: {fileID: 7112752472869403061, guid: aab04aa7960c6794cb789f7dd690869b,
+      type: 3}
+  - identifier: O
+    cardSprite: {fileID: 5433449995169814141, guid: aab04aa7960c6794cb789f7dd690869b,
+      type: 3}
+  - identifier: P
+    cardSprite: {fileID: -4252152113809563852, guid: aab04aa7960c6794cb789f7dd690869b,
+      type: 3}
+  - identifier: Q
+    cardSprite: {fileID: -4447791616812998045, guid: aab04aa7960c6794cb789f7dd690869b,
+      type: 3}
+  - identifier: R
+    cardSprite: {fileID: -6342808464625005154, guid: aab04aa7960c6794cb789f7dd690869b,
+      type: 3}
+  - identifier: S
+    cardSprite: {fileID: 8083504644574312765, guid: aab04aa7960c6794cb789f7dd690869b,
+      type: 3}
+  - identifier: T
+    cardSprite: {fileID: -4461999128152558772, guid: aab04aa7960c6794cb789f7dd690869b,
+      type: 3}
+  - identifier: U
+    cardSprite: {fileID: 3270655726746431581, guid: aab04aa7960c6794cb789f7dd690869b,
+      type: 3}
+  - identifier: V
+    cardSprite: {fileID: -2983290644488427326, guid: aab04aa7960c6794cb789f7dd690869b,
+      type: 3}
+  - identifier: W
+    cardSprite: {fileID: -9165466868132007793, guid: aab04aa7960c6794cb789f7dd690869b,
+      type: 3}
+  - identifier: X
+    cardSprite: {fileID: 4461586319009975920, guid: aab04aa7960c6794cb789f7dd690869b,
+      type: 3}
+  - identifier: Y
+    cardSprite: {fileID: -5001085640463096552, guid: a67253e8056f6444fb2f404ed0ee1689,
+      type: 3}
+  - identifier: Z
+    cardSprite: {fileID: 3539555106843919260, guid: a67253e8056f6444fb2f404ed0ee1689,
+      type: 3}

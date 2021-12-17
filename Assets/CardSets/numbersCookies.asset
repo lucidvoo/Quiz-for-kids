@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e367826d0ed43144998aa53311ed0528, type: 3}
+  m_Name: numbersCookies
+  m_EditorClassIdentifier: 
+  cards:
+  - identifier: 1
+    cardSprite: {fileID: 4698001895285738585, guid: ee36f3af26c11334080735a42fa4b0bf,
+      type: 3}
+  - identifier: 2
+    cardSprite: {fileID: -960048640888701906, guid: ee36f3af26c11334080735a42fa4b0bf,
+      type: 3}
+  - identifier: 3
+    cardSprite: {fileID: -7526284206063505752, guid: ee36f3af26c11334080735a42fa4b0bf,
+      type: 3}
+  - identifier: 4
+    cardSprite: {fileID: -3304312553479857383, guid: ee36f3af26c11334080735a42fa4b0bf,
+      type: 3}
+  - identifier: 5
+    cardSprite: {fileID: -3101759230613078836, guid: ee36f3af26c11334080735a42fa4b0bf,
+      type: 3}
+  - identifier: 6
+    cardSprite: {fileID: -3864270613518650326, guid: ee36f3af26c11334080735a42fa4b0bf,
+      type: 3}
+  - identifier: 7
+    cardSprite: {fileID: -6534152554652887183, guid: ee36f3af26c11334080735a42fa4b0bf,
+      type: 3}
+  - identifier: 8
+    cardSprite: {fileID: -1702195849993345714, guid: 2e6587931e0bba043892fdc741eb045f,
+      type: 3}
+  - identifier: 9
+    cardSprite: {fileID: -1155199509967091035, guid: 38a2369562faa43419f54ec7f5d7c108,
+      type: 3}
+  - identifier: 10
+    cardSprite: {fileID: 4142021021139464533, guid: 5d4ba432abba20e4da5b81c1890bffe8,
+      type: 3}

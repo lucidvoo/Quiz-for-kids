@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 38a2369562faa43419f54ec7f5d7c108
+guid: 2e6587931e0bba043892fdc741eb045f
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1155199509967091035
-    second: SD_NC_Cookies_9
+      213: -1702195849993345714
+    second: SD_NC_Cookies_8
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -49,11 +49,11 @@ TextureImporter:
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
-  spriteBorder: {x: 0, y: 110, z: 208, w: 0}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 0
   alphaUsage: 1
   alphaIsTransparency: 1
-  spriteTessellationDetail: 0
+  spriteTessellationDetail: -1
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
@@ -90,13 +90,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: SD_NC_Cookies_9
+      name: SD_NC_Cookies_8
       rect:
         serializedVersion: 2
-        x: 5
-        y: 111
-        width: 296
-        height: 396
+        x: 17
+        y: 99
+        width: 269
+        height: 394
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -104,17 +104,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5aac4bb8a28e7ffe0800000000000000
-      internalID: -1155199509967091035
+      spriteID: e45a00f94e59068e0800000000000000
+      internalID: -1702195849993345714
       vertices: []
       indices: 
       edges: []
       weights: []
-    outline:
-    - - {x: -254, y: -147}
-      - {x: -254, y: 255}
-      - {x: 49, y: 255}
-      - {x: 49, y: -147}
+    outline: []
     physicsShape: []
     bones: []
     spriteID: 5e97eb03825dee720800000000000000
