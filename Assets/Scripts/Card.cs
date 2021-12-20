@@ -44,4 +44,13 @@ public class Card : MonoBehaviour
         // назначить скейл
         contentSpriteRenderer.transform.localScale *= scaleToSet;
     }
+
+
+    private void OnMouseDown()
+    {
+        Events.onCardClicked.Invoke(this);
+    }
+
+
+    
 }

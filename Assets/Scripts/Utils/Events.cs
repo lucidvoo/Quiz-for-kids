@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
+// Система событий
+
 // Класс, содержащий перечень кастомных объектов событий, каждый из которых содержит в себе
 // событие и методы подписки/отписки/вызова. Классы этих кастомных событий идут далее в этом файле.
 public static class Events
@@ -11,6 +13,12 @@ public static class Events
     //public static readonly Evt onSmthHappened = new Evt();
     //public static readonly Evt<int> onSmthHappenedWithArg = new Evt<int>();
 
+    // Player input
+    public static readonly Evt<Card> onCardClicked = new Evt<Card>();
+
+    // Tweening
+    public static readonly Evt onTweensStarted = new Evt();
+    public static readonly Evt onTweensEnded = new Evt();
 }
 
 // событие без параметров

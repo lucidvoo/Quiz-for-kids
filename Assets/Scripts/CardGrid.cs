@@ -18,6 +18,17 @@ public class CardGrid : MonoBehaviour
     private string rightAnswer;
     private Card[,] cards;
 
+    private void OnEnable()
+    {
+        Events.onCardClicked.AddListener(OnCardClicked_Handler);
+    }
+
+
+    private void OnDisable()
+    {
+        Events.onCardClicked.RemoveListener(OnCardClicked_Handler);
+    }
+
     void Start()
     {
         isGameInPlay.value = true;
@@ -96,4 +107,24 @@ public class CardGrid : MonoBehaviour
             usedRightAnswers[currentCardSetInd].Add(rightAnswer);
         }
     }
+
+
+    // Событие "щелчек по карточке" ведет к этому методу
+    private void OnCardClicked_Handler(Card cardClicked)
+    {
+        if (!isGameInPlay.value)
+        {
+            return;
+        }
+
+        if (cardClicked.ContentIdentifier == rightAnswer)
+        {
+
+        }
+        else
+        {
+
+        }
+    }
+
 }
