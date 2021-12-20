@@ -169,6 +169,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 458b30f44aa6e124b865359d0b64c7f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  contentSprRen: {fileID: 1103134639809232870}
+  borderSprRen: {fileID: 465364644055506396}
+  backgroundSprRen: {fileID: 8679165070661773343}
+  gridCenter: {fileID: 0}
 --- !u!1 &2517825945131754009
 GameObject:
   m_ObjectHideFlags: 0

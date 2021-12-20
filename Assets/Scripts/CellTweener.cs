@@ -8,7 +8,6 @@ public class CellTweener : MonoBehaviour
     [SerializeField] SpriteRenderer contentSprRen;
     [SerializeField] SpriteRenderer borderSprRen;
     [SerializeField] SpriteRenderer backgroundSprRen;
-    [SerializeField] Transform gridCenter;
 
     private float fadeDuration = 1f;
     private float appearElasticDuration = 1f;
@@ -16,14 +15,30 @@ public class CellTweener : MonoBehaviour
     private float rightAnswerDuration = 2f;
     private float rightAnswerScaleMultiply = 3f;
 
+    private InitialValues initialValues;
+
     private Tweener transformTweener, contentTweener, borderTweener, backgrTweener, contentTweenerAdditional;
 
     private static int tweensInPlay = 0;
 
+    private class InitialValues
+    {
+        public Vector3 cardPos, cardScale;
+        public Vector3 contentPos, contentScale;
+
+        public InitialValues(Transform cardTransform, Transform contentTransform)
+        {
+            cardPos = cardTransform.position;
+            cardScale = cardTransform.localScale;
+            contentPos = contentTransform.localPosition;
+            contentScale = contentTransform.localScale;
+        }
+    }
 
     private void Start()
     {
         // сохранить все начальные значения, которые будут меняться, для возможности последующего восстановления
+        initialValues = new InitialValues(transform, contentSprRen.transform);
     }
 
     public void AppearElastic()
@@ -43,7 +58,7 @@ public class CellTweener : MonoBehaviour
         contentTweener.OnStart(OnTweenStart).OnKill(OnTweenComplete);
     }
 
-    public void RightAnswer()
+    public void RightAnswer(Transform gridCenter)
     {
         KillAllTweeners();
 
@@ -115,6 +130,14 @@ public class CellTweener : MonoBehaviour
     {
         KillAllTweeners();
 
+        transform.position = initialValues.cardPos;
+        transform.localScale = initialValues.cardScale;
 
+        contentSprRen.transform.localPosition = initialValues.contentPos;
+        contentSprRen.transform.localScale = initialValues.contentScale;
+
+        contentSprRen.color = new Color(contentSprRen.color.r, contentSprRen.color.g, contentSprRen.color.b, 1f);
+        borderSprRen.color = new Color(borderSprRen.color.r, borderSprRen.color.g, borderSprRen.color.b, 1f);
+        backgroundSprRen.color = new Color(backgroundSprRen.color.r, backgroundSprRen.color.g, backgroundSprRen.color.b, 1f);
     }
 }
