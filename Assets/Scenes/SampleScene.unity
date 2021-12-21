@@ -361,10 +361,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1497cd68fb7a3194aaad20ab839ba628, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SpawnPos: {fileID: 17599800}
+  spawnPos: {fileID: 17599800}
   cardPrefab: {fileID: 6086162799218849386, guid: 1cba82479c2eab747ae44cd6c3aa4211,
     type: 3}
-  cardSize: {x: 1.05, y: 1.05}
+  cardSize: {x: 1.1, y: 1.1}
 --- !u!114 &797655286
 MonoBehaviour:
   m_ObjectHideFlags: 0

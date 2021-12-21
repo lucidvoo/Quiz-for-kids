@@ -11,7 +11,7 @@ public class CellTweener : MonoBehaviour
 
     private float fadeDuration = 1f;
     private float appearElasticDuration = 1f;
-    private float shakeDuration = 1f;
+    private float shakeDuration = 1.5f;
     private float rightAnswerDuration = 2f;
     private float rightAnswerScaleMultiply = 3f;
 
@@ -45,7 +45,7 @@ public class CellTweener : MonoBehaviour
     {
         KillAllTweeners();
 
-        transformTweener = transform.DOScale(Vector3.zero, appearElasticDuration).From().SetEase(Ease.InElastic, 1.3f, 0.2f);
+        transformTweener = transform.DOScale(Vector3.zero, appearElasticDuration).From().SetEase(Ease.OutElastic, 1.2f, 0.7f);
         transformTweener.OnStart(OnTweenStart).OnKill(OnTweenComplete);
     }
 

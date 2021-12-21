@@ -7,6 +7,7 @@ public class Card : MonoBehaviour
 {
     [SerializeField] private SpriteRenderer contentSpriteRenderer;
     [SerializeField] private RectTransform contentRect;
+    [SerializeField] private CellTweener cellTweener;
 
     private string contentIdentifier;
 
@@ -51,6 +52,18 @@ public class Card : MonoBehaviour
         Events.onCardClicked.Invoke(this);
     }
 
+    public void WrongAnswerTween()
+    {
+        cellTweener.WrongShake();
+    }
 
+    public void RightAnswerTween(Transform gridCenter)
+    {
+        cellTweener.RightAnswer(gridCenter);
+    }
     
+    public void AppearTween()
+    {
+        cellTweener.AppearElastic();
+    }
 }

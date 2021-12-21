@@ -18,34 +18,33 @@ public class CardGrid : MonoBehaviour
     private string rightAnswer;
     private Card[,] cards;
 
-    private void OnEnable()
-    {
-        Events.onCardClicked.AddListener(OnCardClicked_Handler);
-    }
-
-
-    private void OnDisable()
-    {
-        Events.onCardClicked.RemoveListener(OnCardClicked_Handler);
-    }
+    public string RightAnswer => rightAnswer;
+    public CardSpawner Spawner => spawner;
 
     void Start()
     {
         isGameInPlay.value = true;
 
         SetupGrid();
+
+        foreach (Card card in cards)
+        {
+            card.AppearTween();
+        }
     }
 
 
     // Подготовка поля к игре и запуск уровня
     private void SetupGrid()
     {
-        cards = spawner.SpawnCards(levelSequence.Levels[currentLevelInd].LevelSizeRows, 
-                                   levelSequence.Levels[currentLevelInd].LevelSizeColumns, 
+        cards = spawner.SpawnCards(levelSequence.Levels[currentLevelInd].LevelSizeRows,
+                                   levelSequence.Levels[currentLevelInd].LevelSizeColumns,
                                    transform);
 
         SetupCardContents();
         PickRightAnswer();
+
+        Events.onLevelLoaded.Invoke();
     }
 
 
@@ -93,38 +92,36 @@ public class CardGrid : MonoBehaviour
         {
             usedRightAnswers.Add(currentCardSetInd, new HashSet<string>());
         }
-        else
-        {
-            string identifierToCheck;
-            do
-            {
-                int r = UnityEngine.Random.Range(0, cards.GetLength(0));
-                int c = UnityEngine.Random.Range(0, cards.GetLength(1));
-                identifierToCheck = cards[r, c].ContentIdentifier;
-            } while (usedRightAnswers[currentCardSetInd].Contains(identifierToCheck));
 
-            rightAnswer = identifierToCheck;
-            usedRightAnswers[currentCardSetInd].Add(rightAnswer);
-        }
+        string identifierToCheck;
+        do
+        {
+            int r = UnityEngine.Random.Range(0, cards.GetLength(0));
+            int c = UnityEngine.Random.Range(0, cards.GetLength(1));
+            identifierToCheck = cards[r, c].ContentIdentifier;
+        } while (usedRightAnswers[currentCardSetInd].Contains(identifierToCheck));
+
+        rightAnswer = identifierToCheck;
+        usedRightAnswers[currentCardSetInd].Add(rightAnswer);
     }
 
-
-    // Событие "щелчек по карточке" ведет к этому методу
-    private void OnCardClicked_Handler(Card cardClicked)
+    public void GoToNextLevel()
     {
-        if (!isGameInPlay.value)
+        currentLevelInd++;
+
+        if (currentLevelInd == levelSequence.Levels.Length - 1)
         {
+            Events.onLevelSequenceComplete.Invoke();
             return;
         }
 
-        if (cardClicked.ContentIdentifier == rightAnswer)
+        foreach (Card card in cards)
         {
-
+            Destroy(card.gameObject);
         }
-        else
-        {
+        cards = null;
 
-        }
+        SetupGrid();
     }
 
 }

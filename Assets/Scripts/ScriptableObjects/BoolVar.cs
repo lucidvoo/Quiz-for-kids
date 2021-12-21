@@ -5,10 +5,9 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "new Bool", menuName = "ScriptableObjects/Variables/bool", order = 10)]
 public class BoolVar : ScriptableObject
 {
-    private bool previousValue;
-
     public bool value;
 
+    private bool previousValue;
 
     public void SetTemporary(bool value)
     {

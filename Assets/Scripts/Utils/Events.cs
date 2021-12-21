@@ -9,16 +9,18 @@ using System;
 // событие и методы подписки/отписки/вызова. Классы этих кастомных событий идут далее в этом файле.
 public static class Events
 {
-    // Примеры описания
-    //public static readonly Evt onSmthHappened = new Evt();
-    //public static readonly Evt<int> onSmthHappenedWithArg = new Evt<int>();
-
     // Player input
     public static readonly Evt<Card> onCardClicked = new Evt<Card>();
 
     // Tweening
     public static readonly Evt onTweensStarted = new Evt();
     public static readonly Evt onTweensEnded = new Evt();
+
+    // GamePlay
+    public static readonly Evt onWrongAnswer = new Evt();
+    public static readonly Evt onRightAnswer = new Evt();
+    public static readonly Evt onLevelSequenceComplete = new Evt();
+    public static readonly Evt onLevelLoaded = new Evt();
 }
 
 // событие без параметров

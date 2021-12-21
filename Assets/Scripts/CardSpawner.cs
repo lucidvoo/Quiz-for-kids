@@ -5,11 +5,13 @@ using UnityEngine;
 
 public class CardSpawner : MonoBehaviour
 {
-    [SerializeField] private Transform SpawnPos;
+    [SerializeField] private Transform spawnPos;
     [SerializeField] private Card cardPrefab;
     [SerializeField] private Vector2 cardSize;
 
     private Card[,] cards;
+
+    public Transform SpawnPos => spawnPos;
 
     private void Start()
     {

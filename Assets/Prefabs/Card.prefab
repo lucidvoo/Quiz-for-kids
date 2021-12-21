@@ -157,6 +157,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   contentSpriteRenderer: {fileID: 1103134639809232870}
   contentRect: {fileID: 431314464677155720}
+  cellTweener: {fileID: 5249626617111903134}
 --- !u!114 &5249626617111903134
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -172,7 +173,6 @@ MonoBehaviour:
   contentSprRen: {fileID: 1103134639809232870}
   borderSprRen: {fileID: 465364644055506396}
   backgroundSprRen: {fileID: 8679165070661773343}
-  gridCenter: {fileID: 0}
 --- !u!1 &2517825945131754009
 GameObject:
   m_ObjectHideFlags: 0
