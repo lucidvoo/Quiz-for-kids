@@ -20,6 +20,7 @@ public class CardGrid : MonoBehaviour
 
     public string RightAnswer => rightAnswer;
     public CardSpawner Spawner => spawner;
+    public Card[,] Cards => cards;
 
     void Start()
     {
@@ -109,7 +110,7 @@ public class CardGrid : MonoBehaviour
     {
         currentLevelInd++;
 
-        if (currentLevelInd == levelSequence.Levels.Length - 1)
+        if (currentLevelInd == levelSequence.Levels.Length)
         {
             Events.onLevelSequenceComplete.Invoke();
             return;

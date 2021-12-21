@@ -66,4 +66,9 @@ public class Card : MonoBehaviour
     {
         cellTweener.AppearElastic();
     }
+
+    public void FadeOut()
+    {
+        cellTweener.FadeOut();
+    }
 }

@@ -11,9 +11,9 @@ public class CellTweener : MonoBehaviour
 
     private float fadeDuration = 1f;
     private float appearElasticDuration = 1f;
-    private float shakeDuration = 1.5f;
+    private float shakeDuration = 0.8f;
     private float rightAnswerDuration = 2f;
-    private float rightAnswerScaleMultiply = 3f;
+    private float rightAnswerScaleMultiply = 2.5f;
 
     private InitialValues initialValues;
 
@@ -53,8 +53,7 @@ public class CellTweener : MonoBehaviour
     {
         KillAllTweeners();
 
-        contentTweener = contentSprRen.transform.DOShakePosition(shakeDuration, new Vector3(1f, 0.3f) /* настроить другие параметры? */);
-        //contentTweener.SetEase(Ease.OutQuad); добавить если будет слишком резко кончаться
+        contentTweener = contentSprRen.transform.DOShakePosition(shakeDuration, new Vector3(0.15f, 0.02f));
         contentTweener.OnStart(OnTweenStart).OnKill(OnTweenComplete);
     }
 
@@ -101,6 +100,7 @@ public class CellTweener : MonoBehaviour
         borderTweener?.Kill();
         backgrTweener?.Kill();
         transformTweener?.Kill();
+        contentTweenerAdditional?.Kill();
     }
 
 

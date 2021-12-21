@@ -38,14 +38,22 @@ public class GameLogic : MonoBehaviour
     }
 
 
-    private void CheckAnswer(Card card)
+    private void CheckAnswer(Card cardClicked)
     {
-        if (card.ContentIdentifier == cardGrid.RightAnswer)
+        if (cardClicked.ContentIdentifier == cardGrid.RightAnswer)
         {
             // ответ верный
             Events.onRightAnswer.Invoke();
 
-            card.RightAnswerTween(cardGrid.Spawner.SpawnPos);
+            cardClicked.RightAnswerTween(cardGrid.Spawner.SpawnPos);
+            foreach (Card card in cardGrid.Cards)
+            {
+                if (card == cardClicked)
+                {
+                    continue;
+                }
+                card.FadeOut();
+            }
 
             isRightAnswerGiven = true;
         }
@@ -54,7 +62,7 @@ public class GameLogic : MonoBehaviour
             // ответ неверный
             Events.onWrongAnswer.Invoke();
 
-            card.WrongAnswerTween();
+            cardClicked.WrongAnswerTween();
         }
     }
 
@@ -68,6 +76,7 @@ public class GameLogic : MonoBehaviour
 
         if (isRightAnswerGiven)
         {
+            isRightAnswerGiven = false;
             cardGrid.GoToNextLevel();
         }
     }
