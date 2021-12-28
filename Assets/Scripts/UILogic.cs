@@ -53,13 +53,6 @@ public class UILogic : MonoBehaviour
 
     public void RestartButtonHandler()
     {
-        Debug.Log("Restart clicked, isGameInPlay = " + isGameInPlay.value);
-        
-        /*if (!isGameInPlay.value)
-        {
-            return;
-        }*/
-        
         tweener.HideRestart();
         
         tweener.TweenInLoadingScreen();
