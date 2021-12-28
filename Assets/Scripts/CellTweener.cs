@@ -51,7 +51,7 @@ public class CellTweener : MonoBehaviour
     {
         KillAllTweeners();
 
-        contentTweener = contentSprRen.transform.DOShakePosition(shakeDuration, new Vector3(0.15f, 0.02f));
+        contentTweener = contentSprRen.transform.DOShakePosition(shakeDuration, new Vector3(0.15f, 0.015f));
         contentTweener.OnStart(OnTweenStart).OnKill(OnTweenComplete);
     }
 

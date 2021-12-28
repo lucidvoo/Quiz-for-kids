@@ -43,6 +43,8 @@ public class GameLogic : MonoBehaviour
     {
         tweensInPlay++;
 
+        Debug.Log("tweens in play = " + tweensInPlay);
+
         if (tweensInPlay == 1)
         {
             BlockGameplay();
@@ -53,6 +55,8 @@ public class GameLogic : MonoBehaviour
     private void OnTweenEnded_Handler()
     {
         tweensInPlay--;
+
+        Debug.Log("tweens in play = " + tweensInPlay);
 
         if (tweensInPlay == 0)
         {

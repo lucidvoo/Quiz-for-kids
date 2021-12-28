@@ -21,36 +21,49 @@ public class UILogic : MonoBehaviour
         loadingPanel.gameObject.SetActive(false);
     }
 
+
     private void OnEnable()
     {
         Events.onLevelLoaded.AddListener(SetFindText);
         Events.onLevelSequenceComplete.AddListener(ShowRestartScreen);
+        Events.onGameStarted.AddListener(OnGameStarted_Handler);
     }
+
 
     private void OnDisable()
     {
         Events.onLevelLoaded.RemoveListener(SetFindText);
         Events.onLevelSequenceComplete.RemoveListener(ShowRestartScreen);
+        Events.onGameStarted.RemoveListener(OnGameStarted_Handler);
     }
 
-    private void SetFindText()
-    {
-        findText.text = cardGrid.RightAnswer;
 
-        // твинер фэйдина текста
-    }
+    private void SetFindText() => findText.text = "Find " + cardGrid.RightAnswer;
+
+
+    private void OnGameStarted_Handler() => tweener.TweenFindText();
+
 
     private void ShowRestartScreen()
     {
-        // заблокировать управление игроку
-        // с твином вывести фон, после появления фона показать кнопку рестарт
-
+        isGameInPlay.value = false;
+        tweener.TweenRestart();
     }
+
 
     public void RestartButtonHandler()
     {
-        // плавное появление загрузочного
-        // убрать рестарт-окошко
+        Debug.Log("Restart clicked, isGameInPlay = " + isGameInPlay.value);
+        
+        /*if (!isGameInPlay.value)
+        {
+            return;
+        }*/
+        
+        tweener.HideRestart();
+        
+        tweener.TweenInLoadingScreen();
+
         // перезагрузка уровня
         // плавное исчезновение загрузочного
         // после исчезновения запуск всех твинов и только после этого разблокирование уравления игроку.

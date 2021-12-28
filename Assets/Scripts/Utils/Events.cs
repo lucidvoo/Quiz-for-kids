@@ -21,6 +21,7 @@ public static class Events
     public static readonly Evt onRightAnswer = new Evt();
     public static readonly Evt onLevelSequenceComplete = new Evt();
     public static readonly Evt onLevelLoaded = new Evt();
+    public static readonly Evt onGameStarted = new Evt();
 }
 
 // событие без параметров

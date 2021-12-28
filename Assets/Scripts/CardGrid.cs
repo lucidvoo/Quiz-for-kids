@@ -28,6 +28,8 @@ public class CardGrid : MonoBehaviour
 
         SetupGrid();
 
+        Events.onGameStarted.Invoke();
+
         foreach (Card card in cards)
         {
             card.AppearTween();
