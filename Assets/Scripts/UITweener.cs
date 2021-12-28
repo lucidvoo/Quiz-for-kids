@@ -1,18 +1,33 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class UITweener : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+
+
+    public void FadeIn()
     {
-        
+        Fade(0f);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void FadeOut()
     {
-        
+        Fade(0f);
+    }
+
+    private void Fade(float outOrInFloat)
+    {
+        KillAllTweeners();
+
+        contentTweener = contentSprRen.DOFade(outOrInFloat, fadeDuration);
+        contentTweener.OnStart(OnTweenStart).OnKill(OnTweenComplete);
+
+        backgrTweener = borderSprRen.DOFade(outOrInFloat, fadeDuration);
+        backgrTweener.OnStart(OnTweenStart).OnKill(OnTweenComplete);
+
+        borderTweener = backgroundSprRen.DOFade(outOrInFloat, fadeDuration);
+        borderTweener.OnStart(OnTweenStart).OnKill(OnTweenComplete);
     }
 }

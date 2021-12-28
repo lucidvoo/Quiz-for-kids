@@ -19,8 +19,6 @@ public class CellTweener : MonoBehaviour
 
     private Tweener transformTweener, contentTweener, borderTweener, backgrTweener, contentTweenerAdditional;
 
-    private static int tweensInPlay = 0;
-
     private class InitialValues
     {
         public Vector3 cardPos, cardScale;
@@ -104,26 +102,10 @@ public class CellTweener : MonoBehaviour
     }
 
 
-    private void OnTweenComplete()
-    {
-        tweensInPlay--;
-
-        if (tweensInPlay == 0)
-        {
-            Events.onTweensEnded.Invoke();
-        }
-    }
+    private void OnTweenComplete() => Events.onTweenEnded.Invoke();
 
 
-    private void OnTweenStart()
-    {
-        tweensInPlay++;
-
-        if (tweensInPlay == 1)
-        {
-            Events.onTweensStarted.Invoke();
-        }
-    }
+    private void OnTweenStart() => Events.onTweenStarted.Invoke();
 
 
     public void RestoreAppearance()

@@ -13,8 +13,8 @@ public static class Events
     public static readonly Evt<Card> onCardClicked = new Evt<Card>();
 
     // Tweening
-    public static readonly Evt onTweensStarted = new Evt();
-    public static readonly Evt onTweensEnded = new Evt();
+    public static readonly Evt onTweenStarted = new Evt();
+    public static readonly Evt onTweenEnded = new Evt();
 
     // GamePlay
     public static readonly Evt onWrongAnswer = new Evt();

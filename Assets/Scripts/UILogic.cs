@@ -12,6 +12,7 @@ public class UILogic : MonoBehaviour
     [SerializeField] private Image restartPanel;
     [SerializeField] private Button restartButton;
     [SerializeField] private Image loadingPanel;
+    [SerializeField] private UITweener tweener;
 
 
     private void Start()

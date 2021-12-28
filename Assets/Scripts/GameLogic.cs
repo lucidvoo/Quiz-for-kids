@@ -9,21 +9,23 @@ public class GameLogic : MonoBehaviour
     [SerializeField] private CardGrid cardGrid;
 
     private bool isRightAnswerGiven = false;
+    private int tweensInPlay = 0;
+
 
 
     private void OnEnable()
     {
         Events.onCardClicked.AddListener(OnCardClicked_Handler);
-        Events.onTweensStarted.AddListener(BlockGameplay);
-        Events.onTweensEnded.AddListener(UnBlockGameplay);
+        Events.onTweenStarted.AddListener(OnTweenStarted_Handler);
+        Events.onTweenEnded.AddListener(OnTweenEnded_Handler);
     }
 
 
     private void OnDisable()
     {
         Events.onCardClicked.RemoveListener(OnCardClicked_Handler);
-        Events.onTweensStarted.RemoveListener(BlockGameplay);
-        Events.onTweensEnded.RemoveListener(UnBlockGameplay);
+        Events.onTweenStarted.RemoveListener(OnTweenStarted_Handler);
+        Events.onTweenEnded.RemoveListener(OnTweenEnded_Handler);
     }
 
 
@@ -35,6 +37,29 @@ public class GameLogic : MonoBehaviour
         }
 
         CheckAnswer(card);
+    }
+
+    private void OnTweenStarted_Handler()
+    {
+        tweensInPlay++;
+
+        if (tweensInPlay == 1)
+        {
+            BlockGameplay();
+        }
+    }
+
+
+    private void OnTweenEnded_Handler()
+    {
+        tweensInPlay--;
+
+        if (tweensInPlay == 0)
+        {
+            UnBlockGameplay();
+
+            CheckLevelCompletionCondition();
+        }
     }
 
 
@@ -70,10 +95,11 @@ public class GameLogic : MonoBehaviour
     private void BlockGameplay() => isGameInPlay.SetTemporary(false);
 
 
-    private void UnBlockGameplay()
-    {
-        isGameInPlay.Restore();
+    private void UnBlockGameplay() => isGameInPlay.Restore();
 
+
+    private void CheckLevelCompletionCondition()
+    {
         if (isRightAnswerGiven)
         {
             isRightAnswerGiven = false;
@@ -82,5 +108,4 @@ public class GameLogic : MonoBehaviour
     }
 
 
-    
 }
