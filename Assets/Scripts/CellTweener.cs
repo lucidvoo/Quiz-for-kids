@@ -33,7 +33,7 @@ public class CellTweener : MonoBehaviour
         }
     }
 
-    private void Start()
+    private void OnEnable()
     {
         // сохранить все начальные значения, которые будут меняться, для возможности последующего восстановления
         initialValues = new InitialValues(transform, contentSprRen.transform);

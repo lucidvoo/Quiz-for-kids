@@ -43,7 +43,7 @@ public class GameLogic : MonoBehaviour
     {
         tweensInPlay++;
 
-        Debug.Log("tweens in play = " + tweensInPlay);
+        //Debug.Log("tweens in play = " + tweensInPlay);
 
         if (tweensInPlay == 1)
         {

@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class CardGrid : MonoBehaviour
 {
-
     [SerializeField] private CardSetData[] cardSets;
     [SerializeField] private LevelSequenceData levelSequence;
     [SerializeField] private CardSpawner spawner;
@@ -107,6 +106,7 @@ public class CardGrid : MonoBehaviour
         rightAnswer = identifierToCheck;
         usedRightAnswers[currentCardSetInd].Add(rightAnswer);
     }
+
 
     public void GoToNextLevel()
     {

@@ -13,11 +13,6 @@ public class CardSpawner : MonoBehaviour
 
     public Transform SpawnPos => spawnPos;
 
-    private void Start()
-    {
-
-    }
-
 
     public Card[,] SpawnCards(int rows, int cols, Transform parent)
     {

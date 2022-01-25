@@ -3,10 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class Card : MonoBehaviour
 {
     [SerializeField] private SpriteRenderer contentSpriteRenderer;
-    [SerializeField] private RectTransform contentRect;
+    [SerializeField] private RectTransform contentRect; // в префабе с помощью него задаются максимальные габариты спрайта по ширине и высоте
     [SerializeField] private CellTweener cellTweener;
 
     private string contentIdentifier;
@@ -15,7 +16,7 @@ public class Card : MonoBehaviour
 
     public void SetContent(CardData cardData)
     {
-        this.contentIdentifier = cardData.Identifier;
+        contentIdentifier = cardData.Identifier;
         contentSpriteRenderer.sprite = cardData.CardSprite;
 
         SetContentProperSize();
@@ -52,20 +53,24 @@ public class Card : MonoBehaviour
         Events.onCardClicked.Invoke(this);
     }
 
+
     public void WrongAnswerTween()
     {
         cellTweener.WrongShake();
     }
+
 
     public void RightAnswerTween(Transform gridCenter)
     {
         cellTweener.RightAnswer(gridCenter);
     }
     
+
     public void AppearTween()
     {
         cellTweener.AppearElastic();
     }
+
 
     public void FadeOut()
     {

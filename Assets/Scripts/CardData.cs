@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-
 // один элемент содержимого карточки. Спрайт и соответствующее текстовое обозначение.
+
 [System.Serializable]
 public class CardData
 {
